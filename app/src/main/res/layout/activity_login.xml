@@ -43,6 +43,7 @@
             android:background="#78E3E4DF"
             android:fontFamily="@font/malgunbd"
             android:hint="Email"
+            android:padding="8dp"
             android:inputType="textEmailAddress"
             android:textSize="24sp" />
 
@@ -55,6 +56,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="Password"
+            android:padding="8dp"
             android:background="#78E3E4DF"
             android:inputType="textPassword"
             android:fontFamily="@font/malgunbd"
@@ -73,6 +75,7 @@
             android:elevation="15dp"
             android:fontFamily="@font/malgunbd"
             android:text="로그인"
+            android:padding="8dp"
             android:textColor="#ffffff"
             android:textSize="24sp" />
 
@@ -89,6 +92,7 @@
             android:elevation="15dp"
             android:fontFamily="@font/malgunbd"
             android:text="회원가입"
+            android:padding="8dp"
             android:textColor="#ffffff"
             android:textSize="24sp" />
 
