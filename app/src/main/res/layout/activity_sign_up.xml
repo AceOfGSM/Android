@@ -86,14 +86,13 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="8dp"
             android:background="#78E3E4DF"
-            android:padding="8dp"
             android:fontFamily="@font/malgunbd"
             android:hint="Name"
-            android:inputType="textPassword"
+            android:padding="8dp"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/SignUp"
+            android:id="@+id/signUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

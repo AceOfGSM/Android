@@ -30,11 +30,11 @@
         android:id="@+id/sleep_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="36dp"
+        android:gravity="center"
+        android:text="65"
         android:textColor="#000000"
-        android:text="59"
-        android:gravity="center"/>
+        android:textSize="36dp"
+        android:textStyle="normal" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -45,6 +45,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/sleep2"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/sleep2" />
 </LinearLayout>
