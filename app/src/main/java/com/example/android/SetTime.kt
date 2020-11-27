@@ -1,10 +1,12 @@
 package com.example.android
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import com.google.gson.GsonBuilder
 import com.google.gson.internal.GsonBuildConfig
 import kotlinx.android.synthetic.main.activity_main.*
@@ -138,7 +140,7 @@ class SetTime : AppCompatActivity() {
             } else {
                 "오전 "
             }
-            val time = "$setAmPm ${picker.hour%12} : ${picker.minute}"
+            val time = "$setAmPm ${picker.hour%12}:${picker.minute}"
             val data = SleepData(title_alarm.text.toString(), time, arrayList, title_asmr.text.toString())
 
             val gson = GsonBuilder().create()
@@ -154,6 +156,47 @@ class SetTime : AppCompatActivity() {
             finish()
         }
 
+        btn_asmr.setOnClickListener {
+            val asmrs = arrayListOf<String>("(Stage1)", "(Stage2)", "(Stage3)", "(Stage4)","(Stage5)")
+            val builder = AlertDialog.Builder(this@SetTime)
+            builder.setTitle("ASMR 선택")
+
+            asmrs.add("취소")
+
+            val items = asmrs.toTypedArray<CharSequence>()
+
+            builder.setItems(items){ dialogInterface: DialogInterface, count: Int ->
+                if(count != asmrs.size){
+                    title_asmr.text = asmrs[count]
+                }
+            }
+            builder.setCancelable(false)
+            val alert = builder.create()
+            alert.show()
+        }
+
+        btn_alarm.setOnClickListener {
+            val alarms = arrayListOf<String>("기본", "운동", "회사")
+            val builder = AlertDialog.Builder(this@SetTime)
+            builder.setTitle("알람 선택")
+
+            alarms.add("취소")
+
+            val items = alarms.toTypedArray<CharSequence>()
+
+            builder.setItems(items){ dialogInterface: DialogInterface, count: Int ->
+                if(count != alarms.size){
+                    title_alarm.text = alarms[count]
+                }
+            }
+            builder.setCancelable(false)
+            val alert = builder.create()
+            alert.show()
+        }
+
+        cancel.setOnClickListener {
+            finish()
+        }
     }
 
     @SuppressLint("CommitPrefEdits")
