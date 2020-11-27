@@ -140,7 +140,17 @@ class SetTime : AppCompatActivity() {
             } else {
                 "오전 "
             }
-            val time = "$setAmPm ${picker.hour%12}:${picker.minute}"
+            val hour = if(picker.hour%12 < 10){
+                "0${picker.hour%12}"
+            } else{
+                "${picker.hour%12}"
+            }
+            val minute = if(picker.minute < 10){
+                "0${picker.minute}"
+            } else {
+                "${picker.minute}"
+            }
+            val time = "$setAmPm $hour:${minute}"
             val data = SleepData(title_alarm.text.toString(), time, arrayList, title_asmr.text.toString())
 
             val gson = GsonBuilder().create()
@@ -166,7 +176,7 @@ class SetTime : AppCompatActivity() {
             val items = asmrs.toTypedArray<CharSequence>()
 
             builder.setItems(items){ dialogInterface: DialogInterface, count: Int ->
-                if(count != asmrs.size){
+                if(count != asmrs.size-1){
                     title_asmr.text = asmrs[count]
                 }
             }
@@ -185,7 +195,7 @@ class SetTime : AppCompatActivity() {
             val items = alarms.toTypedArray<CharSequence>()
 
             builder.setItems(items){ dialogInterface: DialogInterface, count: Int ->
-                if(count != alarms.size){
+                if(count != alarms.size-1){
                     title_alarm.text = alarms[count]
                 }
             }

@@ -42,7 +42,7 @@ class TimeActivity : AppCompatActivity() {
     fun setList(){
         val arrayList = getData().arrayList!!
         alarm_list.adapter = TimeAdapter(this@TimeActivity, arrayList)
-
+        setTime(arrayList)
     }
 
     @SuppressLint("SimpleDateFormat")
@@ -51,7 +51,7 @@ class TimeActivity : AppCompatActivity() {
         if(arrayList.size == 0){
             time_sleep.text = "알람이 없습니다"
         } else {
-
+            
         }
     }
 
