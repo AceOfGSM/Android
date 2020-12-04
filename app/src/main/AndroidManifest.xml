@@ -10,12 +10,12 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainUserActivity"
-            android:label="@string/title_activity_main_user"><intent-filter>
+            android:label="@string/title_activity_main_user"></activity>
+        <activity android:name=".SetTime"><intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
-        <activity android:name=".SetTime"></activity>
         <activity android:name=".TimeActivity" />
         <activity android:name=".SleepActivity" />
         <activity

@@ -6,6 +6,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.NumberPicker
 import androidx.appcompat.app.AlertDialog
 import com.google.gson.GsonBuilder
 import com.google.gson.internal.GsonBuildConfig
@@ -17,6 +18,7 @@ class SetTime : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_time)
+
 
         sunday.setOnClickListener {
             if(sunday.currentTextColor == Color.RED){

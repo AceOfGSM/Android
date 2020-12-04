@@ -13,11 +13,10 @@
         android:background="#A600FF">
 
         <TimePicker
+            android:theme="@style/Theme.picker"
             android:id="@+id/picker"
-            android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:outlineAmbientShadowColor="#ffffff"
             android:timePickerMode="spinner" />
     </LinearLayout>
     <LinearLayout

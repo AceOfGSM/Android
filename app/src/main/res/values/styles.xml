@@ -13,4 +13,10 @@
         <item name="colorAccent">#D6A3F9</item>
     </style>
 
+    <style name="Theme.picker" parent="android:Theme.Holo.Light">
+        <item name="android:editTextStyle">@style/Widget.EditText.White</item>
+    </style>
+    <style name="Widget.EditText.White" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
 </resources>
