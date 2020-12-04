@@ -1,5 +1,7 @@
 package com.example.android.fragment
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,13 +20,16 @@ import kotlinx.android.synthetic.main.fragment_frame__home.view.*
 
 class Frame_Home : Fragment() {
 
+    @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_frame__home, container, false)
         // Inflate the layout for this fragment
-
+        val userID : String? = arguments!!.getString("userID")
+        view.mainName.setText("${userID!!.substring(0,1)}")
+        view.textName.setText("좋은 꿈 꾸세요 ${userID}님")
         var arrayList = ArrayList<Entry>()
         //숙면 데이터 받는 코드
 

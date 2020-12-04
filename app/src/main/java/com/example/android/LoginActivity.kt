@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         loginButton.setOnClickListener {
             RetrofitHelper().getUserAPI().login(loginID.text.toString(),loginPwd.text.toString()).enqueue(object : Callback<Responselogin>{
                 override fun onResponse(
@@ -27,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val intent = Intent(this@LoginActivity, MainUserActivity::class.java)
                         intent.putExtra("userID",response.body()!!.user.name)
+                        intent.putExtra("userEmail", response.body()!!.user.email)
                         intent.putExtra("token",response.body()!!.token)
                         startActivity(intent)
                     }
