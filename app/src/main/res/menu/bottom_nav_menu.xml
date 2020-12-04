@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/sleep_analysis"
+        android:icon="@drawable/sleep_an"
+        android:title="수면 분석" />
+
+    <item
+        android:id="@+id/vibration_control"
+        android:icon="@drawable/vibration"
+        android:title="진동 제어" />
+
+    <item
+        android:id="@+id/my_profile"
+        android:icon="@drawable/frofile"
+        android:title="프로필" />
+</menu>
