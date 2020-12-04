@@ -17,7 +17,7 @@ class MainUserActivity : AppCompatActivity() {
             .replace(R.id.layout_main_Frame, Frame_Home())
             .commitAllowingStateLoss() // 홈 프래그먼트로 넘어감
         
-        bottom_navigation_view.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+        bottom_navigation_view.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.home -> {
                     supportFragmentManager.beginTransaction()
@@ -41,6 +41,6 @@ class MainUserActivity : AppCompatActivity() {
                 }
             }
             true
-        })
+        }
     }
 }

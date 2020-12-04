@@ -10,7 +10,6 @@ import android.widget.NumberPicker
 import androidx.appcompat.app.AlertDialog
 import com.google.gson.GsonBuilder
 import com.google.gson.internal.GsonBuildConfig
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_set_time.*
 
 class SetTime : AppCompatActivity() {
