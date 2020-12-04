@@ -15,6 +15,7 @@ class MainUserActivity : AppCompatActivity() {
     private val fragmentManager : FragmentManager = supportFragmentManager
     private val fragmentHome : Frame_Home = Frame_Home()
     private val fragmentProfile : Frame_Profile = Frame_Profile()
+    private val fragmentVivration : Frame_vivration = Frame_vivration()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_user)
@@ -24,6 +25,7 @@ class MainUserActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString("userID", intent.getStringExtra("userID"))
         bundle.putString("userEmail", intent.getStringExtra("userEmail"))
+        fragmentVivration.arguments = bundle
         fragmentHome.arguments = bundle
         fragmentProfile.arguments = bundle
         val transaction : FragmentTransaction = fragmentManager.beginTransaction()
@@ -43,7 +45,7 @@ class MainUserActivity : AppCompatActivity() {
                 }
                 R.id.vibration_control -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.layout_main_Frame, Frame_vivration())
+                        .replace(R.id.layout_main_Frame, fragmentVivration)
                         .commitAllowingStateLoss() // 개인정보 화면으로 넘어감
                 }
                 R.id.my_profile -> {
