@@ -7,13 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".SetTime"
     android:orientation="vertical">
-
-    <TimePicker
-        android:id="@+id/picker"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:timePickerMode="spinner" />
+        android:background="#A600FF">
 
+        <TimePicker
+            android:id="@+id/picker"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="#ffffff"
+            android:timePickerMode="spinner" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
