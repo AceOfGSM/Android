@@ -2,15 +2,12 @@ package com.example.android
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.example.android.DTO.SleepData
 import kotlinx.android.synthetic.main.item_check_alarm.view.*
-import kotlinx.android.synthetic.main.item_sleep_alarm.view.*
 
 class TimeAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapter() {
     val mContext = context
@@ -32,9 +29,9 @@ class TimeAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapt
         val inflater = LayoutInflater.from(mContext)
         val converterView = inflater.inflate(R.layout.item_check_alarm, viewGroup, false)
 
-        converterView.item_time.text = mDataList[position].time
+        converterView.item_time.text = mDataList[position].alarmTimeto
 
-        converterView.item_type.text = mDataList[position].alarm
+        converterView.item_name.text = mDataList[position].name
 
         var cnt = 0
 

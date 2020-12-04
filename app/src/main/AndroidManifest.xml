@@ -20,8 +20,8 @@
             android:name=".MainUserActivity"
             android:label="@string/title_activity_main_user">
         </activity>
-        <activity android:name=".SetTime" />
-        <activity android:name=".TimeActivity" />
+        <activity android:name=".TimeActivity"
+            android:theme="@style/Material"/>
         <activity android:name=".SleepActivity" />
         <activity
             android:name=".SignUpActivity"
@@ -36,9 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" />
     </application>
 
 </manifest>
