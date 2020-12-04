@@ -12,16 +12,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        login.setOnClickListener {
-            Toast.makeText(this@LoginActivity, "로그인", Toast.LENGTH_LONG).show()
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            intent.putExtra("name", id)
-            startActivity(intent)
-            finish()
-        }
-        goSignUp.setOnClickListener {
-            startActivityForResult(Intent(this@LoginActivity, SignUpActivity::class.java),1)
-        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

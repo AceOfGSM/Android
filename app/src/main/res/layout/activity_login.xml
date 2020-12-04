@@ -8,94 +8,88 @@
     tools:context=".LoginActivity"
     android:gravity="center">
 
-
     <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/shape"
-        android:elevation="10dp"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingTop="60dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="60dp"
+        app:boxStrokeColor="#D6A3F9"
+        android:layout_marginStart="40dp"
+        android:textColorHint="#D6A3F9"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginPwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Email"
+            android:textSize="18dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="#D6A3F9"
+        android:id="@+id/textInputLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:textColorHint="#D6A3F9"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Password"
+            android:textSize="18dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginButton"
+        android:layout_width="174dp"
+        android:layout_marginTop="70dp"
+        android:layout_height="56dp"
+        android:background="@drawable/shape_button"
+        android:text="Login"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <Button
+        android:id="@+id/btnGoSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00ff0000"
+        android:text="Don't have an account? Sign up"
+        android:textAllCaps="false"
+        android:textColor="#D6A3F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/logo_b" />
-
-        <EditText
-            android:id="@+id/inputEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="#78E3E4DF"
-            android:fontFamily="@font/malgunbd"
-            android:hint="Email"
-            android:padding="8dp"
-            android:inputType="textEmailAddress"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/inputPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:hint="Password"
-            android:padding="8dp"
-            android:background="#78E3E4DF"
-            android:inputType="textPassword"
-            android:fontFamily="@font/malgunbd"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/black_shape"
-            android:elevation="15dp"
-            android:fontFamily="@font/malgunbd"
-            android:padding="8dp"
-            android:text="로그인"
-            android:textColor="#ffffff"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/goSignUp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/black_shape"
-            android:elevation="15dp"
-            android:fontFamily="@font/malgunbd"
-            android:padding="8dp"
-            android:text="회원가입"
-            android:textColor="#ffffff"
-            android:textSize="24sp" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
