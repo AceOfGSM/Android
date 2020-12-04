@@ -10,10 +10,10 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        signUp.setOnClickListener {
-            if(name.text != null){
+        signupButton.setOnClickListener {
+            if(signupName.text != null){
                 val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
-                intent.putExtra("name", name.text.toString())
+                intent.putExtra("name", signupName.text.toString())
                 setResult(1,intent)
                 finish()
             }

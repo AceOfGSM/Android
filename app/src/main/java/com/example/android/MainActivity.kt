@@ -19,17 +19,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        userName.text = intent.getStringExtra("name")
-
-        imageView2.setOnClickListener {
-            startActivity(Intent(this, SleepActivity::class.java))
-        }
-
-        setAlarm.setOnClickListener {
-            startActivity(Intent(this@MainActivity, TimeActivity::class.java))
-        }
-
-        setList()
+//        userName.text = intent.getStringExtra("name")
+//
+//        imageView2.setOnClickListener {
+//            startActivity(Intent(this, SleepActivity::class.java))
+//        }
+//
+//        setAlarm.setOnClickListener {
+//            startActivity(Intent(this@MainActivity, TimeActivity::class.java))
+//        }
+//
+//        setList()
 
     }
 
