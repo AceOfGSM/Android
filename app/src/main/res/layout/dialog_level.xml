@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/stage1"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="70dp"
+        android:text="Stage 1"
+        android:fontFamily="@font/nanumb"
+        android:textColor="#ffffff"
+        android:background="@drawable/square_button"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/stage2"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="70dp"
+        android:text="Stage 2"
+        android:fontFamily="@font/nanumb"
+        android:textColor="#ffffff"
+        android:background="@drawable/square_button"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/stage3"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="70dp"
+        android:text="Stage 3"
+        android:fontFamily="@font/nanumb"
+        android:textColor="#ffffff"
+        android:background="@drawable/square_button"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/stage4"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="70dp"
+        android:text="Stage 4"
+        android:fontFamily="@font/nanumb"
+        android:textColor="#ffffff"
+        android:background="@drawable/square_button"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/stage5"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="70dp"
+        android:text="Stage 5"
+        android:fontFamily="@font/nanumb"
+        android:textColor="#ffffff"
+        android:background="@drawable/square_button"
+        android:textSize="20dp"/>
+</LinearLayout>
