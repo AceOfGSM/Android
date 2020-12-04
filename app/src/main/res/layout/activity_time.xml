@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/shape_background"
     tools:context=".TimeActivity">
 
     <TextView
@@ -14,7 +15,7 @@
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:text="11시간 19분뒤에 알람이 울려요"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -29,14 +30,16 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="300dp"
-            android:src="@drawable/ic_baseline_add_24" />
+            android:src="@drawable/ic_baseline_add_24"
+            app:tint="#ffffff" />
 
         <ImageView
             android:id="@+id/sleep_vert"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_baseline_more_vert_24" />
+            android:src="@drawable/ic_baseline_more_vert_24"
+            app:tint="#ffffff"/>
     </LinearLayout>
 
     <ListView

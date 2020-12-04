@@ -2,13 +2,12 @@ package com.example.android
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.example.android.DTO.SleepData
 import kotlinx.android.synthetic.main.item_sleep_alarm.view.*
 
 class MainAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapter() {
@@ -30,19 +29,14 @@ class MainAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapt
     override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View {
         val inflater = LayoutInflater.from(mContext)
         val converterView = inflater.inflate(R.layout.item_sleep_alarm, viewGroup, false)
-        converterView.alarm_title.text = mDataList[position].alarm
+        converterView.alarm_title.text = "기본 알람"
         var cnt = 0
         Log.d("TAG", "TEST")
 
-        var dayOfWeek = ""
 
-        for (d in mDataList[position].dayOfWeek){
-            dayOfWeek += d
-        }
 
-        converterView.alarm_date.text = dayOfWeek
-        converterView.nameOfRing.text = mDataList[position].sing
-        converterView.wake_time.text = mDataList[position].time
+        converterView.nameOfRing.text = mDataList[position].name
+        converterView.wake_time.text = mDataList[position].alarmTimeto
 
         converterView.onoff.setOnClickListener {
             if(cnt % 2 == 0) {
