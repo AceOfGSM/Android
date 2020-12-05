@@ -1,57 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".fragment.Frame_Profile">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:gravity="center"
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/profileplay"
+        android:background="@drawable/stork"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/profileName"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/profileoval"
-        android:fontFamily="@font/nanumb"
-        android:gravity="center"
-        android:text="원준"
-        android:textColor="#ffffff"
-        android:textSize="30dp"
-        android:layout_marginTop="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_image"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/proEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이메일 : Email"
+                android:textSize="20dp"
+                android:fontFamily="@font/nanumb"
+                android:textColor="#494646"/>
+            <TextView
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:id="@+id/profiName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이름 :Name"
+                android:textSize="20dp"
+                android:fontFamily="@font/nanumb"
+                android:textColor="#494646"/>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_margin="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-        <TextView
-            android:id="@+id/proEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="30dp"
-            android:fontFamily="@font/nanumb"
-            android:textColor="#000000"/>
-        <TextView
-            android:layout_marginTop="20dp"
-            android:id="@+id/profiName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="30dp"
-            android:fontFamily="@font/nanumb"
-            android:textColor="#000000"/>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#B3DFDFDF">
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/square_big"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_brightness_3_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="수면 확인"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/square_big"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_computer_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="수면 분석"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/soundLinear"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/square_big"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/sound"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_music_note_24"/>
+                <TextView
+                    android:id="@+id/soundText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="소리"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/phoneCall"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/square_big"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_support_agent_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="고객 센터"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/smailToday"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/square_big"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/smailDay"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_sentiment_very_satisfied_24"/>
+                <TextView
+                    android:id="@+id/smailDayText"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="하루 기분"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/square_big"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_settings_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="설정"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

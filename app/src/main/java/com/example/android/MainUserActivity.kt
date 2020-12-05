@@ -1,7 +1,10 @@
 package com.example.android
 
+import android.content.Context
+import android.media.AudioManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.android.fragment.Frame_Home
@@ -31,6 +34,7 @@ class MainUserActivity : AppCompatActivity() {
         fragmentHome.arguments = bundle
         fragmentProfile.arguments = bundle
         fragmentSleep.arguments = bundle
+
         val transaction : FragmentTransaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.layout_main_Frame, fragmentHome).commitAllowingStateLoss()
         bottom_navigation_view.setOnNavigationItemSelectedListener { menuItem ->
@@ -52,7 +56,6 @@ class MainUserActivity : AppCompatActivity() {
                         .commitAllowingStateLoss() // 개인정보 화면으로 넘어감
                 }
                 R.id.my_profile -> {
-
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.layout_main_Frame, fragmentProfile)
                         .commitAllowingStateLoss() // 개인정보 화면으로 넘어감
