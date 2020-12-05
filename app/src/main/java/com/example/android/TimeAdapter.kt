@@ -29,10 +29,10 @@ class TimeAdapter(context: Context, dataList: ArrayList<ResponseVibration>) : Ba
         val inflater = LayoutInflater.from(mContext)
         val converterView = inflater.inflate(R.layout.item_check_alarm, viewGroup, false)
 
-        converterView.item_title.text = mDataList[position].vibrationPatternName
+        converterView.item_title.text = mDataList[position].name
 
         converterView.item_time.text = mDataList[position].alarmTimeTo
-        converterView.item_ring.text = mDataList[position].name
+        converterView.item_ring.text = mDataList[position].vibrationPatternName
 
         var isAlarm = mDataList[position].isAlarm
 

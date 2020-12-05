@@ -6,5 +6,6 @@ data class ResponseVibration (
     val isAlarm : Boolean,
     val alarmTimeTo : String,
     val userID : String,
-    val vibrationPatternName : String
+    val vibrationPatternName : String,
+    val token : String
     )

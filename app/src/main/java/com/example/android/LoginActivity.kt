@@ -1,5 +1,7 @@
 package com.example.android
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         loginButton.setOnClickListener {
 
             val sweetAlertDialog =
@@ -34,22 +37,34 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<Responselogin>
                 ) {
                     if (response.isSuccessful) {
-                        val intent = Intent(this@LoginActivity, MainUserActivity::class.java)
-                        intent.putExtra("userID",response.body()!!.user.name)
-                        intent.putExtra("userEmail", response.body()!!.user.email)
-                        intent.putExtra("token",response.body()!!.token)
-                        startActivity(intent)
+                        sweetAlertDialog.dismiss()
+                        val dialog = SweetAlertDialog(this@LoginActivity, SweetAlertDialog.SUCCESS_TYPE)
+
+                        dialog.setCancelable(false)
+
+                        dialog.setTitleText("로그인에 성공하였습니다")
+                            .setConfirmClickListener {
+                                dialog.dismiss()
+                                saveData(loginID.text.toString(), loginPwd.text.toString())
+                                val intent = Intent(this@LoginActivity, MainUserActivity::class.java)
+                                intent.putExtra("userID",response.body()!!.user.email)
+                                intent.putExtra("userName", response.body()!!.user.name)
+                                intent.putExtra("token",response.body()!!.token)
+                                startActivity(intent)
+                            }
+                            .show()
+
 
                     //    val serviceIntent = Intent(this@LoginActivity, 서비스 이름)
 
                     } else {
-                        showFailDialog()
+                        showFailDialog(sweetAlertDialog)
                     }
                 }
 
                 override fun onFailure(call: Call<Responselogin>, t: Throwable) {
                     Log.d("ERROR", t.toString())
-                    showFailDialog()
+                    showFailDialog(sweetAlertDialog)
                 }
 
             })
@@ -59,8 +74,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    fun showFailDialog(){
+    fun showFailDialog(sweetAlertDialog : SweetAlertDialog){
 
+        sweetAlertDialog.dismiss()
         val dialog = SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
 
         dialog.setCancelable(false)
@@ -71,5 +87,12 @@ class LoginActivity : AppCompatActivity() {
             }
             .show()
     }
-
+    @SuppressLint("CommitPrefEdits")
+    fun saveData(id : String, pwd : String){
+        val pref = getSharedPreferences("user", Activity.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.putString("id", id)
+        editor.putString("pwd", pwd)
+        editor.apply()
+    }
 }

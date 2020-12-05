@@ -6,4 +6,7 @@
     android:useLevel="true">
 
     <solid android:color="@color/progress_color"/>
+    <stroke
+        android:width="0.1dp"
+        android:color="@color/progress_color"/>
 </shape>

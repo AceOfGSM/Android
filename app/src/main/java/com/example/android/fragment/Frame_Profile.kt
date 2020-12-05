@@ -20,8 +20,8 @@ class Frame_Profile : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_frame__profile, container, false)
-        val userID : String? = arguments!!.getString("userID")
-        val userEmail : String? = arguments!!.getString("userEmail")
+        val userID : String? = arguments!!.getString("userName")
+        val userEmail : String? = arguments!!.getString("userID")
         view.profileName.text = userID!!.substring(0,1)
         view.profiName.text = "${userID}님"
         view.proEmail.text = "$userEmail"

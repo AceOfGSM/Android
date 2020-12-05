@@ -11,7 +11,12 @@ interface Vibration {
         @Body sleepData: ResponseVibration
     ) : Call<ResponseVibration>
 
-    @GET("/vibration/{name}/")
+    @GET("/vibration/")
+    fun getVibrationList(
+        @Header("Authorization") header : String
+    ) : Call<List<ResponseVibration>>
+
+    @GET("/vibration/{vibrationName}/")
     fun getVibration(
         @Header("Authorization") header : String
     ) : Call<List<ResponseVibration>>

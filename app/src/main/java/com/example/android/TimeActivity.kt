@@ -2,6 +2,7 @@ package com.example.android
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +20,6 @@ class TimeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time)
 
-
             var img = intent.getBooleanExtra("isAlarm", false)
 
             setTime.setOnClickListener {
@@ -36,11 +36,14 @@ class TimeActivity : AppCompatActivity() {
                 }
                 val time = "$hour:${minute}"
 
+
                 RetrofitHelper().getVibration().addVibration(ResponseVibration(id = null,
                     userID = intent.getStringExtra("userID")!!,
-                    name = title_alarm.text.toString(), isAlarm = img, alarmTimeTo = time, vibrationPatternName = title_asmr.text.toString())).enqueue(object :
+                    name = title_alarm.text.toString(), isAlarm = img, alarmTimeTo = time, vibrationPatternName = title_asmr.text.toString(), token = intent.getStringExtra("token")!!)
+                ).enqueue(object :
                     Callback<ResponseVibration> {
                     override fun onResponse(call: Call<ResponseVibration>, response: Response<ResponseVibration>) {
+                        Log.d("token",response.body()!!.userID)
                         if(response.isSuccessful){
                             Toast.makeText(this@TimeActivity, "추가에 성공하였습니다", Toast.LENGTH_LONG).show()
                             finish()
@@ -48,7 +51,6 @@ class TimeActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<ResponseVibration>, t: Throwable) {
-
                     }
 
                 })
