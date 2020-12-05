@@ -7,10 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import com.example.android.DTO.SleepData
+import com.example.android.DTO.ResponseVibration
 import kotlinx.android.synthetic.main.item_sleep_alarm.view.*
 
-class MainAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapter() {
+class MainAdapter(context : Context, dataList: ArrayList<ResponseVibration>) : BaseAdapter() {
     val mContext = context
     val mDataList = dataList
     override fun getCount(): Int {
@@ -36,7 +36,7 @@ class MainAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapt
 
 
         converterView.nameOfRing.text = mDataList[position].name
-        converterView.wake_time.text = mDataList[position].alarmTimeto
+        converterView.wake_time.text = mDataList[position].alarmTimeTo
 
         converterView.onoff.setOnClickListener {
             if(cnt % 2 == 0) {

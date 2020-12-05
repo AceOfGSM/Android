@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_frame__profile.view.*
 
 class Frame_Profile : Fragment() {
 
-    @SuppressLint("UseRequireInsteadOfGet")
+    @SuppressLint("UseRequireInsteadOfGet", "SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,9 +22,9 @@ class Frame_Profile : Fragment() {
         val view = inflater.inflate(R.layout.fragment_frame__profile, container, false)
         val userID : String? = arguments!!.getString("userID")
         val userEmail : String? = arguments!!.getString("userEmail")
-        view.profileName.setText("${userID!!.substring(0,1)}")
-        view.profiName.setText("${userID}님")
-        view.proEmail.setText("${userEmail}")
+        view.profileName.text = userID!!.substring(0,1)
+        view.profiName.text = "${userID}님"
+        view.proEmail.text = "$userEmail"
         return view
     }
 

@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_frame__home.view.*
 
 class Frame_Home : Fragment() {
 
-    @SuppressLint("UseRequireInsteadOfGet")
+    @SuppressLint("UseRequireInsteadOfGet", "SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

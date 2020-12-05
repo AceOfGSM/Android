@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import com.example.android.DTO.SleepData
+import com.example.android.DTO.ResponseVibration
 import kotlinx.android.synthetic.main.item_check_alarm.view.*
 
-class TimeAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapter() {
+class TimeAdapter(context: Context, dataList: ArrayList<ResponseVibration>) : BaseAdapter() {
     val mContext = context
     val mDataList = dataList
     override fun getCount(): Int {
@@ -29,23 +29,21 @@ class TimeAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapt
         val inflater = LayoutInflater.from(mContext)
         val converterView = inflater.inflate(R.layout.item_check_alarm, viewGroup, false)
 
-        converterView.item_title.text
+        converterView.item_title.text = mDataList[position].vibrationPatternName
 
-        converterView.item_time.text = mDataList[position].alarmTimeto
+        converterView.item_time.text = mDataList[position].alarmTimeTo
         converterView.item_ring.text = mDataList[position].name
 
-        var cnt = 0
-
-        //만약 처음부터 on이라면 cnt = 1
+        var isAlarm = mDataList[position].isAlarm
 
         converterView.item_onoff.setOnClickListener {
-            if(cnt % 2 == 0) {
+            if(isAlarm) {
                 converterView.item_onoff.setImageResource(R.drawable.on_switch)
-                cnt++
+                isAlarm = !isAlarm
             }
             else {
                 converterView.item_onoff.setImageResource(R.drawable.off_switch)
-                cnt++
+                isAlarm = !isAlarm
             }
         }
 
