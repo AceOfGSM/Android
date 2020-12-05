@@ -29,11 +29,14 @@ class TimeAdapter(context : Context, dataList: ArrayList<SleepData>) : BaseAdapt
         val inflater = LayoutInflater.from(mContext)
         val converterView = inflater.inflate(R.layout.item_check_alarm, viewGroup, false)
 
-        converterView.item_time.text = mDataList[position].alarmTimeto
+        converterView.item_title.text
 
-        converterView.item_name.text = mDataList[position].name
+        converterView.item_time.text = mDataList[position].alarmTimeto
+        converterView.item_ring.text = mDataList[position].name
 
         var cnt = 0
+
+        //만약 처음부터 on이라면 cnt = 1
 
         converterView.item_onoff.setOnClickListener {
             if(cnt % 2 == 0) {

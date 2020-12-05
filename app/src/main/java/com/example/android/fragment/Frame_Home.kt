@@ -28,7 +28,7 @@ class Frame_Home : Fragment() {
         val view = inflater.inflate(R.layout.fragment_frame__home, container, false)
         // Inflate the layout for this fragment
         val userID : String? = arguments!!.getString("userID")
-        view.mainName.text = userID!!.substring(0,1)
+        view.mainName.text = userID?.substring(0,1)
         view.textName.text = "좋은 꿈 꾸세요 ${userID}님"
         var arrayList = ArrayList<Entry>()
         //숙면 데이터 받는 코드
@@ -72,6 +72,10 @@ class Frame_Home : Fragment() {
         lineDataSet.fillColor = Color.BLUE
 
         view.graph.data = lineData
+
+        //알람 여러개 받아 리스트로 띄우기
+
+        //수면시간 계산해 띄우기
 
         return view
     }
