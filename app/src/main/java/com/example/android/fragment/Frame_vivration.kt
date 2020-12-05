@@ -12,6 +12,7 @@ import com.example.android.DTO.ResponseVibration
 import com.example.android.R
 import com.example.android.TimeActivity
 import com.example.android.TimeAdapter
+import kotlinx.android.synthetic.main.fragment_frame_vivration.*
 import kotlinx.android.synthetic.main.fragment_frame_vivration.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,6 +20,7 @@ import retrofit2.Response
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.*
 import kotlin.collections.ArrayList
@@ -58,26 +60,30 @@ class Frame_vivration : Fragment() {
     fun setList(){
         RetrofitHelper().getVibration().getVibrationList("jwt " + arguments!!.getString("token")!!).enqueue(
             object : Callback<List<ResponseVibration>> {
+                @SuppressLint("SetTextI18n")
                 override fun onResponse(
                     call: Call<List<ResponseVibration>>,
                     response: Response<List<ResponseVibration>>
                 ) {
                     if (response.isSuccessful) {
                         arrayList = (response.body() as ArrayList<ResponseVibration>?)!!
-                        val calendar = LocalTime.now()
 
-                        calendar.hour // 8
-                        calendar.minute // 10
+                        val date = LocalDateTime.now()
 
-                        var hourTime = arrayList[0].alarmTimeTo.substring(0,2).toInt()          //08
-                        var minuteTime = arrayList[0].alarmTimeTo.substring(3,5).toInt()             //30
-                        var Hourresult = hourTime-calendar.hour
-                        var Minuteresult = minuteTime-calendar.minute
-                        val curTime = System.currentTimeMillis()
-                        if (Hourresult < 0) {
+                        var currentTime = LocalDateTime.of(2020,12,5, arrayList[0].alarmTimeTo.substring(0,2).toInt(), arrayList[0].alarmTimeTo.substring(3,5).toInt(),0)
 
-                        }
+                        currentTime =
+                            currentTime.minusHours(date.hour.toLong()).minusMinutes(date.minute.toLong())
 
+
+                        val hour = currentTime.hour
+                        val minute = currentTime.minute
+
+
+
+                        time_sleep.text = hour.toString() + "시간 " + minute +"분 뒤에 알람이 울려요"
+
+                        root!!.alarm_list.adapter = TimeAdapter(context!!, arrayList)
                     }
                 }
 
