@@ -1,2 +1,4 @@
+include ':lib'
+include ':app-release'
 include ':app'
 rootProject.name = "Android"

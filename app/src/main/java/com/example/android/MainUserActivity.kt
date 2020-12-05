@@ -25,6 +25,7 @@ class MainUserActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString("userID", intent.getStringExtra("userID"))
         bundle.putString("userEmail", intent.getStringExtra("userEmail"))
+        bundle.putString("token", intent.getStringExtra("token"))
         fragmentVivration.arguments = bundle
         fragmentHome.arguments = bundle
         fragmentProfile.arguments = bundle

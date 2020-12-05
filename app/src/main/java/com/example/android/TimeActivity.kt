@@ -2,14 +2,11 @@ package com.example.android
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import com.example.android.API.RetrofitHelper
-import com.example.android.DTO.SleepData
+import com.example.android.DTO.ResponseVibration
 import kotlinx.android.synthetic.main.activity_time.*
 import kotlinx.android.synthetic.main.fragment_frame_vivration.*
 import retrofit2.Call
@@ -23,7 +20,7 @@ class TimeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_time)
 
 
-            var img = false
+            var img = intent.getBooleanExtra("isAlarm", false)
 
             setTime.setOnClickListener {
 
@@ -39,13 +36,18 @@ class TimeActivity : AppCompatActivity() {
                 }
                 val time = "$hour:${minute}"
 
-                RetrofitHelper().getVibration().addVibration(SleepData(intent.getStringExtra("userID")!!, title_asmr.text.toString(), img, time)).enqueue(object :
-                    Callback<SleepData> {
-                    override fun onResponse(call: Call<SleepData>, response: Response<SleepData>) {
-
+                RetrofitHelper().getVibration().addVibration(ResponseVibration(id = null,
+                    userID = intent.getStringExtra("userID")!!,
+                    name = title_alarm.text.toString(), isAlarm = img, alarmTimeTo = time, vibrationPatternName = title_asmr.text.toString())).enqueue(object :
+                    Callback<ResponseVibration> {
+                    override fun onResponse(call: Call<ResponseVibration>, response: Response<ResponseVibration>) {
+                        if(response.isSuccessful){
+                            Toast.makeText(this@TimeActivity, "추가에 성공하였습니다", Toast.LENGTH_LONG).show()
+                            finish()
+                        }
                     }
 
-                    override fun onFailure(call: Call<SleepData>, t: Throwable) {
+                    override fun onFailure(call: Call<ResponseVibration>, t: Throwable) {
 
                     }
 

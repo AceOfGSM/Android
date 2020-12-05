@@ -1,7 +1,7 @@
 package com.example.android
 
-import com.example.android.DTO.SleepData
+import com.example.android.DTO.ResponseVibration
 
 data class DataList(
-    var arrayList: ArrayList<SleepData>?
+    var arrayList: ArrayList<ResponseVibration>?
 )
