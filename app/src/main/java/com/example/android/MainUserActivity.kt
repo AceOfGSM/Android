@@ -16,6 +16,7 @@ class MainUserActivity : AppCompatActivity() {
     private val fragmentHome : Frame_Home = Frame_Home()
     private val fragmentProfile : Frame_Profile = Frame_Profile()
     private val fragmentVivration : Frame_vivration = Frame_vivration()
+    private val fragmentSleep : Frame_Sleep = Frame_Sleep()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_user)
@@ -28,6 +29,7 @@ class MainUserActivity : AppCompatActivity() {
         fragmentVivration.arguments = bundle
         fragmentHome.arguments = bundle
         fragmentProfile.arguments = bundle
+        fragmentSleep.arguments = bundle
         val transaction : FragmentTransaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.layout_main_Frame, fragmentHome).commitAllowingStateLoss()
         bottom_navigation_view.setOnNavigationItemSelectedListener { menuItem ->
@@ -40,7 +42,7 @@ class MainUserActivity : AppCompatActivity() {
                 }
                 R.id.sleep_analysis -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.layout_main_Frame, Frame_Sleep())
+                        .replace(R.id.layout_main_Frame, fragmentSleep)
                         .commitAllowingStateLoss() // 작성 프래그먼트로 넘어감
                 }
                 R.id.vibration_control -> {

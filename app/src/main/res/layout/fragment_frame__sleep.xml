@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/square_button"
     tools:context=".fragment.Frame_Sleep">
 
     <TextView
+        android:id="@+id/sleepName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="원준님의 수면 분석"
@@ -264,33 +266,133 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-            <ProgressBar
+                    <ProgressBar
+                        android:id="@+id/breakTimeProgress"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:progress="80"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                android:layout_weight="1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/breakTimeProgress"/>
-            <ProgressBar
-                android:layout_weight="1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/liteTimeProgress"/>
-            <ProgressBar
-                android:layout_weight="1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/deepTimeProgress"/>
-            <ProgressBar
-                android:layout_weight="1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/ramTimeProgress"/>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/progress_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60%"
+                        android:textColor="#892CDC"
+                        android:textSize="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/breakTimeProgress"
+                        app:layout_constraintStart_toStartOf="@+id/breakTimeProgress"
+                        app:layout_constraintTop_toTopOf="@+id/breakTimeProgress" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/liteTimeProgress"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/progress_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60%"
+                        android:textColor="#892CDC"
+                        android:textSize="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/liteTimeProgress"
+                        app:layout_constraintStart_toStartOf="@+id/liteTimeProgress"
+                        app:layout_constraintTop_toTopOf="@+id/liteTimeProgress" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/deepTimeProgress"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:progress="70"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/progress_text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60%"
+                        android:layout_gravity="center"
+                        android:textColor="#892CDC"
+                        android:textSize="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/deepTimeProgress"
+                        app:layout_constraintStart_toStartOf="@+id/deepTimeProgress"
+                        app:layout_constraintTop_toTopOf="@+id/deepTimeProgress" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/ramTimeProgress"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:progress="70"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/progress_text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60%"
+                        android:layout_gravity="center"
+                        android:textColor="#892CDC"
+                        android:textSize="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ramTimeProgress"
+                        app:layout_constraintStart_toStartOf="@+id/ramTimeProgress"
+                        app:layout_constraintTop_toTopOf="@+id/ramTimeProgress" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
