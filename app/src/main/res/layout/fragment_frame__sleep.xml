@@ -87,15 +87,16 @@
                     android:layout_gravity="center"
                     android:textColor="#000000"
                     android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/deep_sleep_sleep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="2187"/>
+                    android:gravity="center"
+                    android:text="32%"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_marginLeft="42dp"
@@ -112,15 +113,16 @@
                     android:layout_gravity="center"
                     android:textColor="#000000"
                     android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/sleep_time_sleep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="3333"/>
+                    android:gravity="center"
+                    android:text="65점"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="70dp"
@@ -136,15 +138,16 @@
                     android:layout_gravity="center"
                     android:textColor="#000000"
                     android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/rem_sleep_sleep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="2918"/>
+                    android:gravity="center"
+                    android:text="68%"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
             </LinearLayout>
         </LinearLayout>
         <TextView
@@ -175,16 +178,17 @@
             android:fontFamily="@font/nanumb"
             android:layout_marginTop="31dp"
             android:layout_marginLeft="30dp"/>
+
         <TextView
             android:id="@+id/userSleep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C274F8"
-            android:textSize="14dp"
-            android:text="당신이 잠든 9시간 11분의 수면 분포도 입니다."
             android:layout_marginLeft="30dp"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/nanumb"/>
+            android:fontFamily="@font/nanumb"
+            android:text="당신이 잠든 5시간 25분의 수면 분포도 입니다."
+            android:textColor="#C274F8"
+            android:textSize="14dp" />
         <LinearLayout
 
             android:layout_marginTop="18dp"
@@ -218,61 +222,66 @@
                 android:textSize="15dp"
                 android:textColor="#000000"
                 android:fontFamily="@font/nanumb"/>
+
             <TextView
-                android:gravity="center"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="램\n시간"
-                android:textSize="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumb"
+                android:gravity="center"
+                android:text="수면 질"
                 android:textColor="#000000"
-                android:fontFamily="@font/nanumb"/>
+                android:textSize="15dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/brakeTime"
-                android:gravity="center"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="95:00"
-                android:textSize="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumb"
+                android:gravity="center"
+                android:text="00:03:15"
                 android:textColor="#000000"
-                android:fontFamily="@font/nanumb"/>
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/liteSleepTime"
-                android:gravity="center"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="04:55:25"
-                android:textSize="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumb"
+                android:gravity="center"
+                android:text="03:43:52"
                 android:textColor="#000000"
-                android:fontFamily="@font/nanumb"/>
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/deep_sleepTime"
-                android:gravity="center"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="13:00:21"
-                android:textSize="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumb"
+                android:gravity="center"
+                android:text="01:37:53"
                 android:textColor="#000000"
-                android:fontFamily="@font/nanumb"/>
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/ramSleepTime"
-                android:gravity="center"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2:00:12"
-                android:textSize="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumb"
+                android:gravity="center"
+                android:text="65점"
                 android:textColor="#000000"
-                android:fontFamily="@font/nanumb"/>
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -290,7 +299,8 @@
                     style="?android:progressBarStyleHorizontal"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:progress="80"
+                    android:progress="1"
+                    android:indeterminateDrawable="@drawable/pb"
                     android:progressDrawable="@drawable/progress"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -298,11 +308,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:layout_gravity="center"
                     android:id="@+id/progress_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="60%"
+                    android:layout_gravity="center"
+                    android:text="1%"
                     android:textColor="#892CDC"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -320,18 +330,20 @@
                     style="?android:progressBarStyleHorizontal"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:progress="90"
+                    android:indeterminateDrawable="@drawable/pb"
+                    android:progress="68"
                     android:progressDrawable="@drawable/progress"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
-                    android:layout_gravity="center"
                     android:id="@+id/progress_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="60%"
+                    android:layout_gravity="center"
+                    android:text="68%"
                     android:textColor="#892CDC"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -350,18 +362,20 @@
                     style="?android:progressBarStyleHorizontal"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:progress="70"
+                    android:indeterminateDrawable="@drawable/pb"
+                    android:progress="32"
                     android:progressDrawable="@drawable/progress"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/progress_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="60%"
                     android:layout_gravity="center"
+                    android:text="32%"
                     android:textColor="#892CDC"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -381,18 +395,20 @@
                     style="?android:progressBarStyleHorizontal"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:progress="70"
+                    android:indeterminateDrawable="@drawable/pb"
+                    android:progress="65"
                     android:progressDrawable="@drawable/progress"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/progress_text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="60%"
                     android:layout_gravity="center"
+                    android:text="65%"
                     android:textColor="#892CDC"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"

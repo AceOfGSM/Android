@@ -7,7 +7,7 @@ import retrofit2.create
 class RetrofitHelper {
 
     private var retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.0.112:8000")
+        .baseUrl("http://192.168.0.8:8000")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

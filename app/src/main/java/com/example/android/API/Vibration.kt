@@ -18,7 +18,8 @@ interface Vibration {
 
     @GET("/vibration/{vibrationName}/")
     fun getVibration(
-        @Header("Authorization") header : String
-    ) : Call<List<ResponseVibration>>
+        @Header("Authorization") header : String,
+        @Field("vibrationName") name : String
+    ) : Call<ResponseVibration>
 
 }

@@ -51,15 +51,16 @@
                 android:fontFamily="@font/nanumb"
                 android:text="수면\n시작시간"
                 android:textColor="#000000"/>
+
             <TextView
                 android:id="@+id/sleepStartTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="23시 21분"
-                android:textSize="15dp"
-                android:textColor="#000000"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/nanumb"/>
+                android:fontFamily="@font/nanumb"
+                android:text="02시 35분"
+                android:textColor="#000000"
+                android:textSize="15dp" />
         </LinearLayout>
         <LinearLayout
             android:gravity="center"
@@ -77,15 +78,16 @@
                 android:fontFamily="@font/nanumb"
                 android:text="수면\n종료시간"
                 android:textColor="#000000"/>
+
             <TextView
                 android:id="@+id/sleepEndTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="08시 21분"
-                android:textSize="15dp"
-                android:textColor="#000000"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/nanumb"/>
+                android:fontFamily="@font/nanumb"
+                android:text="08시 00분"
+                android:textColor="#000000"
+                android:textSize="15dp" />
         </LinearLayout>
         <LinearLayout
             android:gravity="center"
@@ -101,15 +103,16 @@
                 android:fontFamily="@font/nanumb"
                 android:text="총 수면시간"
                 android:textColor="#000000"/>
+
             <TextView
                 android:id="@+id/sleepAlltime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="9시간 21분"
-                android:textSize="15dp"
-                android:textColor="#000000"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/nanumb"/>
+                android:fontFamily="@font/nanumb"
+                android:text="05시간 25분"
+                android:textColor="#000000"
+                android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -156,15 +159,16 @@
                     android:layout_gravity="center"
                     android:textColor="#000000"
                     android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/deep_sleep_sleep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="2187"/>
+                    android:gravity="center"
+                    android:text="32%"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_marginLeft="42dp"
@@ -181,15 +185,16 @@
                     android:layout_gravity="center"
                     android:textColor="#000000"
                     android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/sleep_time_sleep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="3333"/>
+                    android:gravity="center"
+                    android:text="65점"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="70dp"
@@ -205,15 +210,16 @@
                     android:layout_gravity="center"
                     android:textColor="#000000"
                     android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/rem_sleep_sleep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="2918"/>
+                    android:gravity="center"
+                    android:text="68%"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
             </LinearLayout>
         </LinearLayout>
         <TextView

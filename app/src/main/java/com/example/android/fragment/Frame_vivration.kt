@@ -70,7 +70,7 @@ class Frame_vivration : Fragment() {
 
                         val date = LocalDateTime.now()
 
-                        var currentTime = LocalDateTime.of(2020,12,5, arrayList[0].alarmTimeTo.substring(0,2).toInt(), arrayList[0].alarmTimeTo.substring(3,5).toInt(),0)
+                        var currentTime = LocalDateTime.of(2020,12,5, arrayList[0].alarmTimeTo.substring(0,2).toInt()%24, arrayList[0].alarmTimeTo.substring(3,5).toInt()%60,0)
 
                         currentTime =
                             currentTime.minusHours(date.hour.toLong()).minusMinutes(date.minute.toLong())
@@ -81,7 +81,7 @@ class Frame_vivration : Fragment() {
 
 
 
-                        time_sleep.text = hour.toString() + "시간 " + minute +"분 뒤에 알람이 울려요"
+                        root!!.time_sleep.text = hour.toString() + "시간 " + minute +"분 뒤에 알람이 울려요"
 
                         root!!.alarm_list.adapter = TimeAdapter(context!!, arrayList)
                     }

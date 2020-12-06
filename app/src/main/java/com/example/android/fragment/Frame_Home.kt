@@ -1,31 +1,19 @@
 package com.example.android.fragment
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import com.example.android.API.RetrofitHelper
+import androidx.fragment.app.Fragment
 import com.example.android.DTO.ResponseVibration
 import com.example.android.R
-import com.example.android.TimeActivity
-import com.example.android.TimeAdapter
-import com.example.androidv.MainpageAdapter
-import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
-import kotlinx.android.synthetic.main.fragment_frame__home.*
 import kotlinx.android.synthetic.main.fragment_frame__home.view.*
-import kotlinx.android.synthetic.main.fragment_frame_vivration.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class Frame_Home : Fragment() {
@@ -37,21 +25,53 @@ class Frame_Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_frame__home, container, false)
+        root = inflater.inflate(R.layout.fragment_frame__home, container, false)
         // Inflate the layout for this fragment
         val userID : String? = arguments!!.getString("userName")
-        root.mainName.text = userID?.substring(0,1)
-        root.textName.text = "좋은 꿈 꾸세요 ${userID}님"
+        root?.mainName!!.text = userID?.substring(0,1)
+        root?.textName!!.text = "좋은 꿈 꾸세요 ${userID}님"
         //숙면 데이터 받는 코드
 
         //region dummy
+
+        val dataList = ArrayList<Entry>()
+        val text = ArrayList<String>()
+
+
+
+        dataList.add(Entry(1.0f, 2.0f))
+        dataList.add(Entry(2.0f, 3.0f))
+        dataList.add(Entry(3.0f, 3.0f))
+        dataList.add(Entry(4.0f, 3.0f))
+        dataList.add(Entry(5.0f, 2.0f))
+        dataList.add(Entry(6.0f, 2.0f))
+        dataList.add(Entry(7.0f, 1.0f))
+        dataList.add(Entry(8.0f, 2.0f))
+        dataList.add(Entry(9.0f, 3.0f))
+        dataList.add(Entry(10.0f, 2.0f))
+        dataList.add(Entry(11.0f, 1.0f))
+
+        text.add("3:00")
+        text.add("3:30")
+        text.add("4:00")
+        text.add("4:30")
+        text.add("5:00")
+        text.add("5:30")
+        text.add("6:00")
+        text.add("6:30")
+        text.add("7:00")
+        text.add("7:30")
+        text.add("8:00")
+
 
 
         //Entry 클래스는 Entry(Float, Float) 형 클래스로 x,y값으로 구성
         //float 형은 데이터 값으로 추정됨
         //우리는 데이터를 받으면 3.0f 또는 3.toFloat 하면 될듯
-/*
-        val lineDataSet = LineDataSet(arrayList, "test")
+
+        val lineDataSet = LineDataSet(dataList, "SleepData")
+
+
         val dataSet = ArrayList<ILineDataSet>()
         dataSet.add(lineDataSet)
         val lineData = LineData(dataSet)
@@ -61,7 +81,7 @@ class Frame_Home : Fragment() {
         lineDataSet.setDrawFilled(true)
         lineDataSet.fillColor = Color.BLUE
 
-        root.graph.data = lineData*/
+        root?.sleepGraph!!.data = lineData
 
         //알람 여러개 받아 리스트로 띄우기
         setList()

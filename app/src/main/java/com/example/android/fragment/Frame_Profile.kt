@@ -29,12 +29,12 @@ class Frame_Profile : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_frame__profile, container, false)
-//        val userID : String? = arguments!!.getString("userName")
-//        val userEmail : String? = arguments!!.getString("userID")
+        val userID : String? = arguments!!.getString("userName")
+        val userEmail : String? = arguments!!.getString("userID")
         var index : Int = 0
         var index1 : Int = 0
-//        view.profiName.text = "이름 : ${userID}님"
-//        view.proEmail.text = "이메일 : $userEmail"
+        view.profiName.text = "이름 : ${userID}님"
+        view.proEmail.text = "이메일 : $userEmail"
 
 
         view.soundLinear.setOnClickListener {

@@ -25,17 +25,20 @@
         <activity
             android:name=".MainUserActivity"
             android:label="@string/title_activity_main_user">
+
+        </activity>
+        <activity android:name=".TimeActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/Material" />
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TimeActivity" />
-        <activity
-            android:name=".SignUpActivity"
-            android:theme="@style/Material" />
-        <activity android:name=".SplashActivity" />
+
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Material">

@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                         dialog.setTitleText("로그인에 성공하였습니다")
                             .setConfirmClickListener {
                                 dialog.dismiss()
-                                saveData(loginID.text.toString(), loginPwd.text.toString())
+                                saveData(loginID.text.toString(), loginPwd.text.toString(), response.body()!!.token)
                                 val intent = Intent(this@LoginActivity, MainUserActivity::class.java)
                                 intent.putExtra("userID",response.body()!!.user.email)
                                 intent.putExtra("userName", response.body()!!.user.name)
@@ -88,11 +88,12 @@ class LoginActivity : AppCompatActivity() {
             .show()
     }
     @SuppressLint("CommitPrefEdits")
-    fun saveData(id : String, pwd : String){
+    fun saveData(id : String, pwd : String, token : String){
         val pref = getSharedPreferences("user", Activity.MODE_PRIVATE)
         val editor = pref.edit()
         editor.putString("id", id)
         editor.putString("pwd", pwd)
+        editor.putString("token", token)
         editor.apply()
     }
 }
